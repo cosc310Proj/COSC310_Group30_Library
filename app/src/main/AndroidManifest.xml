@@ -14,6 +14,15 @@
         android:theme="@style/Theme.LibrarySystem"
         tools:targetApi="31">
         <activity
+            android:name=".reports"
+            android:exported="false" />
+        <activity
+            android:name=".book_Description"
+            android:exported="false" />
+        <activity
+            android:name=".create_Account"
+            android:exported="false" />
+        <activity
             android:name=".add_form"
             android:exported="false">
             <meta-data

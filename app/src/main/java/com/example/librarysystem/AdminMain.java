@@ -29,4 +29,8 @@ public class AdminMain extends AppCompatActivity {
         Intent intent=new Intent (this, login.class);
         startActivity(intent);
     }
+    public void reports(View v){
+        Intent intent=new Intent(this, reports.class);
+        startActivity(intent);
+    }
 }

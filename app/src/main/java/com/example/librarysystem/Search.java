@@ -37,10 +37,17 @@ public class Search extends AppCompatActivity {
             Book fill = listOfBooks.get(i);//iterating through books
             TableRow row = new TableRow(this);//creating row
             if (fill.checkedOut == false) {
+
                 String title = fill.title;//creating title view
                 TextView titleView = new TextView(this);
                 titleView.setText("" + title);
-
+                titleView.setClickable(true);//set the title text to clickable
+                titleView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v){
+                        advancedBookView(fill);
+                    }
+                });
                 Button checkout = new Button(this);//creating checkout Buttons
                 checkout.setTag(fill);
                 checkout.setText("Checkout");
@@ -80,5 +87,16 @@ public class Search extends AppCompatActivity {
 
 
     }
+    public void advancedBookView(Book book){
+            Intent intent=new Intent(this, book_Description.class);
+            Bundle bundle=new Bundle();
+            bundle.putString("title",book.title);
+            bundle.putString("author",book.author);//Adding needed resources for advanced view
+            bundle.putString("genre",book.genre);
+            //bundle.putString("description",book.description);
 
+            intent.putExtras(bundle);
+            startActivity(intent);//starting activity
+
+    }
 }

@@ -44,6 +44,11 @@ public class login extends AppCompatActivity {
             t1.show();
         }
     }
+    public void createAccount(View v){
+        Intent intent=new Intent(this, create_Account.class);
+        startActivity(intent);
+
+    }
 
     public void createDB() {//if the DB is not created on device, create DB with basic fields
         //this will create or read the database from the file and BookList.read() function
