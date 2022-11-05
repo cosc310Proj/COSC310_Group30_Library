@@ -18,11 +18,18 @@ public class book_Description extends AppCompatActivity {
         Bundle bundle=intent.getExtras();//getting descriptions
 
         TextView title= (TextView) findViewById(R.id.textView4);
-        title.setText(bundle.getString("title"));
+        title.setText("Title: "+bundle.getString("title"));//set title
+
+        TextView author=(TextView) findViewById(R.id.viewAuthor);
+        author.setText("Author: "+bundle.getString("author"));//set genre
+
+        TextView genre=(TextView) findViewById(R.id.viewGenre);
+        genre.setText("Genre: "+bundle.getString("genre"));//set genre
+
+        TextView description=(TextView) findViewById(R.id.viewDescription);
+        description.setText("Description: "+bundle.getString("description"));//set description
     }
     public void returnHomeSearch(View v){//return home button
-        Intent intent= new Intent(this, Search.class);
-        startActivity(intent);
-
+        finish();
     }
 }

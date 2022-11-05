@@ -2,9 +2,11 @@ package com.example.librarysystem;
 
 import static com.example.librarysystem.login.lOB;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,6 +21,7 @@ public class Search extends AppCompatActivity {
     ArrayList<Book> listOfBooks;
     TableLayout displayBooks;//creating references
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +44,7 @@ public class Search extends AppCompatActivity {
                 String title = fill.title;//creating title view
                 TextView titleView = new TextView(this);
                 titleView.setText("" + title);
+                titleView.setTextColor(titleView.getContext().getColor(R.color.teal_700));
                 titleView.setClickable(true);//set the title text to clickable
                 titleView.setOnClickListener(new View.OnClickListener() {
                     @Override
