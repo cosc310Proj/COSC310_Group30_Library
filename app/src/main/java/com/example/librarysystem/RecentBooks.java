@@ -67,4 +67,9 @@ public class RecentBooks extends AppCompatActivity {
     public void returnHome(View v){//return home button
         finish();
     }
+
+    public void goLibraries(View v){
+        Intent intent = new Intent(this, LibrariesNearby.class);
+        startActivity(intent);
+    }
 }

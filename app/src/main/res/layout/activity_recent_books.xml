@@ -36,4 +36,15 @@
 
     </androidx.core.widget.NestedScrollView>
 
+    <Button
+        android:id="@+id/LibraryButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="40dp"
+        android:onClick="goLibraries"
+        android:text="Libraries Near You"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
