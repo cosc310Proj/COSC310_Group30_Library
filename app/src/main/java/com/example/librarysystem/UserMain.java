@@ -53,6 +53,9 @@ public class UserMain extends AppCompatActivity {
         startActivity(intent);
     }
 
-
+    public void goRecent(View view){
+        Intent intent = new Intent(this, RecentBooks.class);
+        startActivity(intent);
+    }
 
 }
