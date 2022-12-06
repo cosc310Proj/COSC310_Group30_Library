@@ -43,10 +43,6 @@
             android:exported="false"
             android:label="@string/title_activity_libraries_nearby" />
         <activity
-            android:name=".MapsActivity"
-            android:exported="false"
-            android:label="@string/title_activity_maps" />
-        <activity
             android:name=".RecentBooks"
             android:exported="false">
             <meta-data
