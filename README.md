@@ -71,7 +71,7 @@ The library app will allow users and staff to interact with the library’s inve
 ## **Class Organization**
 All classes function as activities within the android studio project. We have additional objects used to store data including: Book (stores book info), Booklist (A list of current books), ReportObj (Reported damage), ReportList (List of reports), Account (Stores login info for user) and AccountList (List of all accounts).
 
-## **Iteration 2 Specifications (APIs)**
+## **Iteration 3 Specifications (APIs)**
 - ### **New York Times Books API**
     Users now have access to the New Arrivals button which takes them to a page of the list of books from the latest New York Times Best Sellers List. It uses the RetroFit Library to convert the JSON returned by the API into a Java Object.
      - #### JSON Objects Package
