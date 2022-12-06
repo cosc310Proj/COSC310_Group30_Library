@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        tools:context=".LibrariesNearby"
+        map:cameraBearing="112.5"
+        map:cameraTargetLat="49.8880"
+        map:cameraTargetLng="-119.4960"
+        map:cameraTilt="30"
+        map:cameraZoom="14"
+        map:mapType="normal"
+        map:uiCompass="false"
+        map:uiRotateGestures="true"
+        map:uiScrollGestures="false"
+        map:uiTiltGestures="true"
+        map:uiZoomControls="true"
+        map:uiZoomGestures="true" />
+
+    <Button
+        android:id="@+id/buttonMaps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next Library"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:padding="8dp"
+        android:layout_gravity="center_horizontal"/>
+
+</LinearLayout>
