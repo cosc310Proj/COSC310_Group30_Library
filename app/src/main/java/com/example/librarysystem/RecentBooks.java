@@ -7,8 +7,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.librarysystem.JSONObjects.Books;
+import com.example.librarysystem.JSONObjects.Lists;
+import com.example.librarysystem.JSONObjects.Results;
+
+import java.io.IOException;
 import java.util.List;
 
+import okhttp3.Interceptor;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -27,38 +35,51 @@ public class RecentBooks extends AppCompatActivity {
         recentBooks.setText("");
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://barnesandnobles.herokuapp.com/api/")
+                .baseUrl("https://api.nytimes.com/svc/books/v3/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        BarnesAndNoblesApi barnesAndNoblesApi = retrofit.create(BarnesAndNoblesApi.class);
+        NYTBestSellersAPI nytBestSellersAPI = retrofit.create(NYTBestSellersAPI.class);
 
-        Call<List<BarnesAndNoblesBook>> call = barnesAndNoblesApi.getBooks();
+        Call<NYTBestSellersBook> call = nytBestSellersAPI.getBooks("2022-11-01");
 
-        call.enqueue(new Callback<List<BarnesAndNoblesBook>>() {
+        call.enqueue(new Callback<NYTBestSellersBook>() {
             @Override
-            public void onResponse(Call<List<BarnesAndNoblesBook>> call, Response<List<BarnesAndNoblesBook>> response) {
+            public void onResponse(Call<NYTBestSellersBook> call, Response<NYTBestSellersBook> response) {
                 if(!response.isSuccessful()){
                     recentBooks.setText("Code: " + response.code());
                     return;
                 }
-                List<BarnesAndNoblesBook> barnesAndNoblesBooks = response.body();
+                NYTBestSellersBook nytBestSellersBooks = response.body();
 
-                for(BarnesAndNoblesBook bNB : barnesAndNoblesBooks){
-                    String content = "";
-                    content += "Title: " + bNB.getTitle() + "\n";
-                    content += "Author: " + bNB.getAuthor() + "\n";
-                    content += "Rating: " + bNB.getRating() + "\n";
-                    content += "Price: " + bNB.getPrice() + "\n";
-                    content += "Pages: " + bNB.getPages() + "\n";
-                    content += "Description: " + bNB.getDescription() + "\n\n";
 
-                    recentBooks.append(content);
-                }
+                    Results result = nytBestSellersBooks.getResults();
+                    for(int x = 0; x < nytBestSellersBooks.getNum_results(); x++){
+                        Lists[] lists = result.getLists();
+                        for(Lists list : lists){
+                            recentBooks.append(list.getDisplay_name() + "\n\n");
+
+                            Books[] books = list.getBooks();
+                            for(Books book : books){
+                                String content = "";
+
+                                content += "Title: " + book.getTitle() + "\n";
+                                content += "Author: " + book.getAuthor() + "\n";
+                                content += "Description: " + book.getDescription() + "\n";
+                                content += "Rank: " + book.getRank() + "\n";
+                                content += "Price: " + book.getPrice() + "\n\n";
+
+                                recentBooks.append(content);
+                            }
+
+                            recentBooks.append("\n");
+                        }
+                    }
+
             }
 
             @Override
-            public void onFailure(Call<List<BarnesAndNoblesBook>> call, Throwable t) {
+            public void onFailure(Call<NYTBestSellersBook> call, Throwable t) {
                 recentBooks.setText(t.getMessage());
             }
         });

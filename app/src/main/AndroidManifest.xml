@@ -33,6 +33,11 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyC2Z9vfHVMBq2ArzVzegL4tqqWktHnDqa8" />
 
+        <!--
+        nyt api key: 5eifMVucZefXzgZWxdcsykNKvM1BbYn5
+        app id: 98e9eb04-5aab-49db-9c9b-d049d151b24d
+        -->
+
         <activity
             android:name=".LibrariesNearby"
             android:exported="false"
