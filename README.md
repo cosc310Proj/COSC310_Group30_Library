@@ -74,17 +74,17 @@ All classes function as activities within the android studio project. We have ad
 ## **Iteration 3 Specifications (APIs)**
 - ### **New York Times Books API**
     Users now have access to the New Arrivals button which takes them to a page of the list of books from the latest New York Times Best Sellers List. It uses the RetroFit Library to convert the JSON returned by the API into a Java Object.
-     - #### JSON Objects Package
+    - #### JSON Objects Package
     Stores the various Objects used to hold the JSON Information.
-        - ##### Books
+     -> ##### Books
         Holds specific book information.
-        - ##### Lists
+     -> ##### Lists
         Holds a specific list with an array of books.
-        - ##### Results
+     -> ##### Results
         Holds the list of Lists.
     - #### NYT Best Sellers Book
     Holds the number of results and the Results Object
-        - #### NYT Best Sellers API
+    - #### NYT Best Sellers API
     Queries the lists overview with the api key and the requested query date. It is called by the Recent Books class.
     - #### Recent Books
     Creates the Retrofit build and calls the New York Times Books API, recieves the information, and uses the set up Object classes to access and format the data to be printed in the app. If there is a failure, an error code or message will print instead. Also allows access to Nearby Libraries.
