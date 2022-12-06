@@ -90,8 +90,8 @@ All classes function as activities within the android studio project. We have ad
     Creates the Retrofit build and calls the New York Times Books API, recieves the information, and uses the set up Object classes to access and format the data to be printed in the app. If there is a failure, an error code or message will print instead. Also allows access to Nearby Libraries.
 - ### **Google Maps API**
     Users can now create different accounts that will save books specifically to them. Admin only has 1 universal account. Accounts are limited to a local device. Future iterations 
-    - #### Libraries Nearby
-    Opens a google map focused on Kelowna with a button that allows users to click through the various libraries located in and around Kelowna. Also allows user to zoom in and out, and upon clicking on the pin allows the opening of the google maps app for directions.
+    - #### Libraries Nearby    
+        Opens a google map focused on Kelowna with a button that allows users to click through the various libraries located in and around Kelowna. Also allows user to zoom in and out, and upon clicking on the pin allows the opening of the google maps app for directions.
 
 ## **Installation Instructions**
 ### **System Requirements:**
