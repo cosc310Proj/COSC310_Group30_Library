@@ -84,7 +84,7 @@ All classes function as activities within the android studio project. We have ad
         Holds the list of Lists.
     - #### NYT Best Sellers Book
     Holds the number of results and the Results Object
-    - #### NYT Best Sellers API
+        - #### NYT Best Sellers API
     Queries the lists overview with the api key and the requested query date. It is called by the Recent Books class.
     - #### Recent Books
     Creates the Retrofit build and calls the New York Times Books API, recieves the information, and uses the set up Object classes to access and format the data to be printed in the app. If there is a failure, an error code or message will print instead. Also allows access to Nearby Libraries.
