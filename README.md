@@ -2,7 +2,7 @@
 Welcome to our library managment system! Below is useful information about our app.
 
 ## **System Specifications**
-The library app will allow users and staff to interact with the library’s inventory. The system will consist of a number of features with the first being an account feature where customers can make unique accounts and log in with them. Employees have access to a different account that allows access to features that users should not have access too. Next, the app will have a database that tracks new users and books the library has. The database will track the book’s name, author, genre, id, whether it is checked out or not, who has the book checked out. Users will be able to search for books based on keywords and withdraw books that are currently in stock. Users are able to return books and are notified of the time until overdue. Users can see what books they have checked out at any given time. Users can also report damages of any books and notify admins of the issue. Users can review books after they’ve returned it and view other people’s reviews. Admins can search for specific books and see who is borrowing it. Admins can also add new books to the database and delete any if needed. Admins can also respond to and resolve report tickets.
+The library app will allow users and staff to interact with the library’s inventory. The system will consist of a number of features with the first being an account feature where customers can make unique accounts and log in with them. Employees have access to a different account that allows access to features that users should not have access too. Next, the app will have a database that tracks new users and books the library has. The database will track the book’s name, author, genre, id, whether it is checked out or not, who has the book checked out. Users will be able to search for books based on keywords and withdraw books that are currently in stock. Users are able to return books and are notified of the time until overdue. Users can see what books they have checked out at any given time. Users can also report damages of any books and notify admins of the issue. Users can review books after they’ve returned it and view other people’s reviews. Admins can search for specific books and see who is borrowing it. Admins can also add new books to the database and delete any if needed. Admins can also respond to and resolve report tickets. Users should also be able to view the most recent New York Times Best Sellers and find nearby libraries.
 
 ## **Feature Specifications**
 - ### **Account**
@@ -22,6 +22,12 @@ The library app will allow users and staff to interact with the library’s inve
 
 - ### **Review**
     Users can write reviews and rate books upon returning it. Users should be able to see reviews
+    
+- ### **Recent Arrivals**
+    Users can view the list of recent New York Times Bestsellers books.
+    
+- ### **Nearby Libraries**
+    Users should be able to locate nearby libraries.
 
 ## **Iteration 1 Specifications and Limitations**
 - ### **Basic Login**
@@ -68,8 +74,6 @@ The library app will allow users and staff to interact with the library’s inve
     
     - #### Dynamic Toasts
     Improves the look of toast messages to provide better feedback to the user
-## **Class Organization**
-All classes function as activities within the android studio project. We have additional objects used to store data including: Book (stores book info), Booklist (A list of current books), ReportObj (Reported damage), ReportList (List of reports), Account (Stores login info for user) and AccountList (List of all accounts).
 
 ## **Iteration 3 Specifications (APIs)**
 - ### **New York Times Books API**
@@ -92,6 +96,9 @@ All classes function as activities within the android studio project. We have ad
     Users can now create different accounts that will save books specifically to them. Admin only has 1 universal account. Accounts are limited to a local device. Future iterations 
     - #### Libraries Nearby    
         Opens a google map focused on Kelowna with a button that allows users to click through the various libraries located in and around Kelowna. Also allows user to zoom in and out, and upon clicking on the pin allows the opening of the google maps app for directions.
+
+## **Class Organization**
+All classes function as activities within the android studio project. We have additional objects used to store data including: Book (stores book info), Booklist (A list of current books), ReportObj (Reported damage), ReportList (List of reports), Account (Stores login info for user) and AccountList (List of all accounts). With the addition of APIs, the JSON Objects Package contains new Object classes Books, Lists, and Results, NYTBestSellersBook is also an object class and NYTBestSellersAPI an interface.
 
 ## **Installation Instructions**
 ### **System Requirements:**
