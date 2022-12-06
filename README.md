@@ -71,6 +71,28 @@ The library app will allow users and staff to interact with the library’s inve
 ## **Class Organization**
 All classes function as activities within the android studio project. We have additional objects used to store data including: Book (stores book info), Booklist (A list of current books), ReportObj (Reported damage), ReportList (List of reports), Account (Stores login info for user) and AccountList (List of all accounts).
 
+## **Iteration 2 Specifications (APIs)**
+- ### **New York Times Books API**
+    Users now have access to the New Arrivals button which takes them to a page of the list of books from the latest New York Times Best Sellers List. It uses the RetroFit Library to convert the JSON returned by the API into a Java Object.
+     - #### JSON Objects Package
+    Stores the various Objects used to hold the JSON Information.
+        - ##### Books
+        Holds specific book information.
+        - ##### Lists
+        Holds a specific list with an array of books.
+        - ##### Results
+        Holds the list of Lists.
+    - #### NYT Best Sellers Book
+    Holds the number of results and the Results Object
+    - #### NYT Best Sellers API
+    Queries the lists overview with the api key and the requested query date. It is called by the Recent Books class.
+    - #### Recent Books
+    Creates the Retrofit build and calls the New York Times Books API, recieves the information, and uses the set up Object classes to access and format the data to be printed in the app. If there is a failure, an error code or message will print instead. Also allows access to Nearby Libraries.
+- ### **Google Maps API**
+    Users can now create different accounts that will save books specifically to them. Admin only has 1 universal account. Accounts are limited to a local device. Future iterations 
+    - #### Libraries Nearby
+    Opens a google map focused on Kelowna with a button that allows users to click through the various libraries located in and around Kelowna. Also allows user to zoom in and out, and upon clicking on the pin allows the opening of the google maps app for directions.
+
 ## **Installation Instructions**
 ### **System Requirements:**
 - Android device with an internet connection
